@@ -6,4 +6,6 @@ Users cannot add, edit, and remove drinks from the menu.
 
 
 
-TODO: Work on shopping cart, work on queue list, get login function working so that bartender and customers see different parts of the website.
+TODO: 1.Work on shopping cart. 
+2.Work on queue list. 
+3.Get login function working so that bartender and customers see different parts of the website.
