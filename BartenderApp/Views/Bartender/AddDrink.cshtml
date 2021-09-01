@@ -1,0 +1,64 @@
+﻿@model Bartender
+
+
+<form method="post" asp-action="AddDrink">
+    <div class="border p-5">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <h2 class="text-info">Add New Drink</h2>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label class="required" asp-for="DrinkName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="DrinkName" class="form-control" />
+                        <span asp-validation-for="DrinkName" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <label class="required" asp-for="Price"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <br />
+                
+
+                <div class="row">
+
+                    <div class="col-8 offset-4 row">
+
+                        <div class="col">
+                            <input type="submit" class="btn btn-primary w-100" value="Add" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success w-100">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+
+            </div>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+}

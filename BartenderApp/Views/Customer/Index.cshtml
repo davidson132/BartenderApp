@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Bartender>
+
+<h1>Menu Items</h1>
+
+<div class="container p-5">
+    @if(Model.Count() > 0)
+    {
+        <div class="row p-3">
+            <div class="col">
+                <h2 class="text-primary">Menu</h2>
+            </div>
+            
+        </div>
+        }
+
+    <br />
+
+    <div class="row">
+        <div class="col">
+            @if(Model.Count() > 0)
+            {
+                <table class="table table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Drink</th>
+                            <th>Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var obj in Model)
+                        {
+                            <tr>
+                                <td>@obj.DrinkName</td>
+                                <td>@obj.Price</td>                               
+                                <td class="w-25 text-center">
+                                    <div class="btn">
+                                    <a asp-controller="Cart" asp-route-Id="@obj.Id" asp-action="AddToCart" class="btn btn-outline-primary">Add To Order</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table> 
+                }
+            else
+            {
+                <p>No results were found for that search term.</p>
+                }
+        </div>
+        
+    </div>
+
+</div>
